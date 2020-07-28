@@ -4,6 +4,7 @@ import { CommonModule } from '@angular/common';
 import { HttpClientModule } from '@angular/common/http';
 import { MatCardModule } from '@angular/material/card';
 import { ArticleComponent } from './article/article.component';
+import { ReactiveFormsModule } from '@angular/forms';
 
 @NgModule({
   declarations: [
@@ -13,7 +14,8 @@ import { ArticleComponent } from './article/article.component';
   imports: [
     CommonModule,
     HttpClientModule,
-    MatCardModule
+    MatCardModule,
+    ReactiveFormsModule
   ],
   exports: [
     ArticleComponent,

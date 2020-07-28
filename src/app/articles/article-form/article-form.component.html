@@ -1,1 +1,11 @@
-<p>article-form works!</p>
+<form [formGroup]="formCreate" (ngSubmit)="onSubmit()">
+
+<label >
+    Título
+    <input type="text" name="titulo" formControlName="titulo">
+</label>
+<p>
+   {{teste}}
+</p>
+<input type="submit" value="teste btn">
+</form>
