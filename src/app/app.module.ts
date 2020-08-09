@@ -1,3 +1,4 @@
+import { AppRoutingModule } from './app-routing.module';
 import { ArticleModule } from './articles/article.module';
 import {CoreModule} from './core/core.module';
 import { BrowserModule } from '@angular/platform-browser';
@@ -16,7 +17,8 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
     BrowserModule,
     ArticleModule,
     BrowserAnimationsModule,  
-    CoreModule
+    CoreModule,
+    AppRoutingModule
       
   ],
   providers: [],

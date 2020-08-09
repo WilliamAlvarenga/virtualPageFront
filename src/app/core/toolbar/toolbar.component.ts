@@ -12,4 +12,10 @@ export class ToolbarComponent implements OnInit {
   ngOnInit(): void {
   }
 
+  navbarOpen = false;
+
+  toggleNavbar() {
+    this.navbarOpen = !this.navbarOpen;
+  }
+
 }
