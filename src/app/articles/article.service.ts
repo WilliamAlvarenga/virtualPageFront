@@ -1,8 +1,9 @@
+import { ArticleDto } from './model/articleDto';
 import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
-import { Article } from './article/article';
+import { Article } from './model/article';
 
-const URL = 'http://localhost:8080';
+const URL = 'http://localhost:8080/article';
 
 @Injectable({
   providedIn: 'root'
@@ -14,19 +15,10 @@ export class ArticleService {
   article: Article[];
 
   getArticles() {
+    return this.http.get<any>(URL);
+  }
 
-   return this.http.get<any>(URL + '/article');
-    /*.subscribe(data => {
-
-      this.article = data.content;
-
-      console.log('data: ' + data.totalElements);
-      console.log('art: ' + this.article);
-
-      for (const art of this.article){
-          console.log('Title: ' + art.title);
-      }
-
-    });*/
+  createArticles(articleDto: ArticleDto) {    
+    return this.http.post(URL, articleDto);
   }
 }

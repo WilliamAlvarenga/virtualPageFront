@@ -1,11 +1,28 @@
-<form [formGroup]="formCreate" (ngSubmit)="onSubmit()">
+<form [formGroup]="formCreate" (ngSubmit)="onSubmit()" class="text-center">
 
-<label >
-    Título
-    <input type="text" name="titulo" formControlName="titulo">
-</label>
-<p>
-   {{teste}}
-</p>
-<input type="submit" value="teste btn">
+    <div class="form-group mt-3">
+        <label class="mx-sm-3">
+            Título*
+            <input type="text" name="titulo" formControlName="titulo" class="form-control">
+          <!--  <app-vmessage *ngIf="formCreate.get('titulo').errors?.required" text="teste"> </app-vmessage>-->
+        </label>
+        <label class="mx-sm-3">
+            Autor*
+            <input type="text" name="autor" formControlName="autor" class="form-control">
+        </label>
+    </div>
+
+    <div class="form-group ">
+        <label class="col-6 col-form-label"> Artigo* </label>
+
+        <textarea name="artigo" 
+                  formControlName="artigo"
+                  class="form-control col-sm-10 container-fluid" 
+                  rows="10">
+        </textarea>
+    </div>
+   <div *ngIf="formCreate.invalid">
+      <app-vmessage text="* Campos obrigatórios!"></app-vmessage>
+   </div>
+    <input type="submit" [disabled]="formCreate.invalid || formCreate.pending" value="Salvar" class="btn btn-dark">
 </form>
