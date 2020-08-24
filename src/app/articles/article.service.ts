@@ -21,4 +21,9 @@ export class ArticleService {
   createArticles(articleDto: ArticleDto) {    
     return this.http.post(URL, articleDto);
   }
+
+  getArticleById(articleId:number){
+    return this.http.get<any>(URL+"/"+articleId)
+    
+  }
 }

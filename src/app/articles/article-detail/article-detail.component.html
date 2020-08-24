@@ -1,0 +1,18 @@
+<div class="container" *ngIf="(article$|async) as article">
+    <div  >
+        <img src="https://cdn.pixabay.com/photo/2012/03/01/01/47/man-20404_960_720.jpg" width="100%" height="236">
+       <!-- <img src="https://cdn.pixabay.com/photo/2012/03/01/01/47/man-20404_960_720.jpg">-->
+    </div>
+
+   <h2>{{article.title}}</h2>
+
+   
+        <div class="column">
+           <h4> Autor: {{article.author}} </h4>        
+            <p>                
+                {{article.text}}
+            </p>       
+        </div>
+    
+ Escrito em: {{article.madeDate}}
+</div>
